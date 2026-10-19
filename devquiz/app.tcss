@@ -1,0 +1,73 @@
+/* Hoja de estilos global de DevPythonQuiz.
+ *
+ * Compartida por todas las pantallas (la referencia está en `main.DevPythonQuiz
+ * .CSS_PATH`). Las pantallas además definen su propio CSS en clase (ver
+ * `inicio.HomeScreen.CSS`, `quiz.QuizScreen.CSS`, `estadisticas.ResultsScreen
+ * .CSS`), que tiene más especificidad que estas reglas generales.
+ *
+ * Los valores $primary, $secondary, $success... son tokens del tema de
+ * Textual y se adaptan al tema claro/oscuro.
+ */
+
+/* Fondo general */
+Screen {
+    background: $surface;
+}
+
+/* Panel principal de cada pantalla (inicio, quiz y resultados) */
+#home-container, #quiz-container, #results-container {
+    background: $panel;
+    border: solid $primary;
+}
+
+/* Sin margen extra: cada pantalla ya gestiona sus espacios */
+Button {
+    margin: 0;
+}
+
+Button:focus {
+    border: solid $accent;
+}
+
+Input:focus {
+    border: solid $accent;
+}
+
+/* Resaltar con el cursor la opción bajo el puntero */
+RadioButton:hover {
+    background: $boost;
+}
+
+ProgressBar {
+    margin: 0 0;
+}
+
+/* La barra de progreso se pone verde al completarse */
+ProgressBar > .bar {
+    background: $primary;
+}
+
+ProgressBar > .bar.complete {
+    background: $success;
+}
+
+Label {
+    color: $foreground;
+}
+
+Static {
+    color: $foreground;
+}
+
+/* Barra de desplazamiento, por si el contenido no cabe en la terminal */
+ScrollBar {
+    background: $surface;
+}
+
+ScrollBar > .slider {
+    background: $primary;
+}
+
+ScrollBar > .slider:hover {
+    background: $accent;
+}

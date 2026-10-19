@@ -1,0 +1,28 @@
+[project]
+name = "devquiz"
+version = "0.1.0"
+description = "DevPythonQuiz - A TUI quiz application for Python beginners"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "textual>=8.0",
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project.scripts]
+devquiz = "devquiz.main:main"
+
+[dependency-groups]
+dev = [
+    "pytest>=7.0",
+    "ruff>=0.1.0",
+]
+
+[tool.setuptools.packages.find]
+include = ["devquiz*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
